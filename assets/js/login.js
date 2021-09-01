@@ -58,15 +58,19 @@
 
     // 登录表单事件
     $('#loginForm').on('submit',function(e){
+        
         e.preventDefault();
         let data=$(this).serialize();
+       
         $.post('/api/login',data,function(res){
-            // console.log(res);
+            console.log(res);
            if(res.status!==0){
                return layer.msg(res.message|'注册成功');
            }
            localStorage.setItem('token',res.token);
+           
            location.href='./index.html'
+           console.log('login');
         })
     })
 

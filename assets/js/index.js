@@ -1,13 +1,4 @@
 $(function () {
-
-
-
-
-
-
-
-
-
     getUserInfo();
 
 })
@@ -24,7 +15,7 @@ function getUserInfo() {
         //     Authorization: localStorage.getItem('token') || ''
         // },
         success(res) {
-            console.log(res);
+            // console.log(res);
             if (res.status !== 0) {
                 return layer.msg(res.message || '获取用户信息失败')
             } else {
@@ -46,12 +37,13 @@ function getUserInfo() {
 
 function renderUserImg(value) {
     // 获取用户名称
+    console.log(value);
     let username = value.nickname || value.username;
-    console.log(username);
+    // console.log(username);
     $('#welcome').html('欢迎&nbsp' + username);
     //渲染图片头像
     if (value.user_pic) {
-        $('.userinfo img').attr('src', user_pic).show();
+        $('.userinfo img').attr('src',value.user_pic).show();
         $('.text-avatar').hide();
     } else {
         $('.userinfo img').hide();
