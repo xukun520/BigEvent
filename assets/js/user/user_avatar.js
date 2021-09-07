@@ -53,7 +53,7 @@
             avatar:dataURL
         },
         success(res){
-            console.log(res);
+            // console.log(res);
             if(res.status!==0){
                 return layer.msg(res.message||'请求失败')
             }else{

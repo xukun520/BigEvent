@@ -1,7 +1,7 @@
-$(function () {
+
     getUserInfo();
 
-})
+
 
 // 获取用户的基本信息
 function getUserInfo() {
@@ -22,13 +22,8 @@ function getUserInfo() {
                 layer.msg(res.message || '获取用户信息成功')
                 renderUserImg(res.data)
             }
-        },
-        // complete(res){
-        //     if(res.responseJSON.status==1||res.responseJSON.message=='身份认证失败'){
-        //         localStorage.removeItem('token');
-        // location.href='/login.html';
-        //     }
-        // }
+        }
+      
     })
 }
 
@@ -37,7 +32,7 @@ function getUserInfo() {
 
 function renderUserImg(value) {
     // 获取用户名称
-    console.log(value);
+    // console.log(value);
     let username = value.nickname || value.username;
     // console.log(username);
     $('#welcome').html('欢迎&nbsp' + username);

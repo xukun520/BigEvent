@@ -52,8 +52,6 @@
         }
     
 
-
-
     )})
 
     // 登录表单事件
@@ -70,7 +68,7 @@
            localStorage.setItem('token',res.token);
            
            location.href='./index.html'
-           console.log('login');
+        //    console.log('login');
         })
     })
 
